@@ -1,33 +1,44 @@
-# ModuleName
+# iana-net-info
 
-__Build Status__
-
-Module description
+Get [IANA](iana.org) net info on [protocol numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)
+and [service names](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
 ## Install
 
 ```sh
-  $ npm install moduleName --save
+  $ npm install iana-net-info --save
 ```
 
 ## Usage
 
 ```javascript
-  var moduleName = require('moduleName');
+  var ianaNetInfo = require('iana-net-info');
 
-  // Example
+  // Example: Search info on HTTP service name
+  var serviceInfoArr = ianaNetInfo.service('http');
+
+  // Example: Search info on udp protocol
+  var protocoInfoArr = ianaNetInfo.protocol('udp');
 ```
 
 ## API
 
-## moduleName(input, [options])
+## ianaNetInfo.service(serviceName)
 
-__input__
+__serviceName__
 
-Type: __inputType__
+Type: __String__
 
-description
+Returns an array of objects contain info on the service name.
 
-__options__
+## ianaNetInfo.protocol(keyword)
+
+__keyword__
+
+Type: __String__
+
+Returns an array of objects contain info on the protocol keyword.
 
 ## License
+
+MIT.
